@@ -12,6 +12,7 @@ cotacao_pontos = {
     },
 }
 
+# Definindo o usuário administradror
 administrador = {
     "66666": {
         "nome": "Administrador",
@@ -21,6 +22,7 @@ administrador = {
     },
 }
 
+# Dicionário de usuários
 usuarios = {
     # Exemplo de usuário
     "97973": {
@@ -59,13 +61,13 @@ usuarios = {
     }
 }
 
-# Gerando pins aleatórios para usuários novos
+# Gerando pins aleatórios para novos usuários, para a função cadastro
 def gerar_pin_aleatorio():
     pin = ''.join(str(random.randint(0, 9)) for _ in range(5))
     return pin
 
 
-# Função para validar um número de telefone no formato xxxxx-xxxx
+# Função para validar um número de telefone no formato xxxxxxxxx
 def validar_numero_telefone(telefone):
     padrao = r'^\d{11}$'
     return re.match(padrao, telefone) is not None
@@ -180,13 +182,11 @@ def opcao_reciclar():
         print(f"Material escolhido: {material}\nPeso: {peso} Kg")
         print(f"Pontos ganhos: {pontuacao}")
 
-        # Chame a função para adicionar pontos e material ao dicionário do usuário
         print("Por favor, insira o seu PIN de 5 dígitos:")
         pin_do_usuario = input()
 
         adicionar_pontos_e_material(pin_do_usuario, material, pontuacao, peso)
 
-        # Confirmando a operação
         while True:
             print("Confirmar operação\n(1)\tSim\n(2)\tNão")
             confirmar_op = int(input())
@@ -235,7 +235,7 @@ def exibir_cotacao_pontos():
         print(f"{material}: {pontos} pontos por Kg")
 
 
-# Listra usuarios para o adm
+# Lista usuarios para o adm
 def listar_usuarios():
     print("\nLista de Usuários:\n")
     for pin, usuario in usuarios.items():
@@ -250,6 +250,7 @@ def listar_usuarios():
         print("\n")
 
 
+# Função apra o adm conseguir mudar a cotação de pontos
 def mudar_cotacao_pontos():
     print("\nMudar Cotação de Pontos:\n")
     print("Escolha um material para atualizar a cotação:")
@@ -323,7 +324,7 @@ def alterar_informacoes_usuario():
     print(f"As informações do usuário {pin_usuario} foram alteradas com sucesso.")
 
 
-# Função para excluir um usuário
+# Função para excluir um usuário (apenas adm possui esse acesso)
 def excluir_usuario():
     print("\nExcluir Usuário:\n")
     print("Digite o PIN do usuário que deseja excluir:")
@@ -344,11 +345,10 @@ def excluir_usuario():
         print("A exclusão foi cancelada.")
 
 
-# Função para adicionar um novo usuário
+# Função para adicionar um novo usuário (apenas adm possui esse acesso)
 def adicionar_usuario():
     print("\nAdicionar Novo Usuário:\n")
 
-    # Solicitar informações do novo usuário
     nome_usuario = input("Digite o nome do novo usuário: ")
     if re.search("\d", nome_usuario):
         print("Erro: Nomes não podem conter números.")
@@ -364,10 +364,8 @@ def adicionar_usuario():
         print("Erro: Endereço de e-mail inválido.")
         return
 
-    # Gerando um novo PIN aleatório
     novo_pin = gerar_pin_aleatorio()
 
-    # Adicionar o novo usuário ao dicionário de usuários
     usuarios[novo_pin] = {
         "nome": nome_usuario,
         "infos": {
@@ -437,6 +435,7 @@ while True:
     print("(1)\tEntrar\n(2)\tCadastrar-se\n(3)\tSair")
     escolha_menu_inicial = input()
 
+    # Estrutura de decisão para decidir qual menu vai ser exibido (adm ou usuário)
     if escolha_menu_inicial == "1":
         print("Por favor insira o seu PIN de 5 dígitos:")
         pin = input()
@@ -446,7 +445,7 @@ while True:
         elif pin in usuarios:
             usuario = usuarios[pin]
             print(f"Bem-vindo, {usuario['nome']}! Estamos felizes em receber de volta.")
-            # menu secundário (usuário)
+
             nav_menu_secundario = True
             while nav_menu_secundario:
                 print(
