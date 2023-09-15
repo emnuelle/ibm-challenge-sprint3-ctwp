@@ -159,7 +159,12 @@ def adicionar_pontos_e_material(pin, material, quantidade_pontos, quantidade_mat
 def opcao_reciclar():
     while True:
         print(
-            "Por Favor, escolha o material que deseja depositar:\n(1)\tPapel\n(2)\tPlástico\n(3)\tVidro\n(4)\tMetal\n(5)\tEletrônicos")
+            "Por Favor, escolha o material que deseja depositar:\n"
+            "(1)\tPapel\n"
+            "(2)\tPlástico\n"
+            "(3)\tVidro\n"
+            "(4)\tMetal\n"
+            "(5)\tEletrônicos\n")
         escolha_reciclar = int(input())
 
         if escolha_reciclar == 1:
@@ -390,7 +395,7 @@ def adicionar_usuario():
 # menu adm
 def nav_menu_adm():
     while True:
-        print("\nMenu do Administrador:\n")
+        print("Menu do Administrador:")
         print("Escolha uma opção:")
         print("(1) Cotação de Pontos Atual")
         print("(2) Mudar Cotação de Pontos")
@@ -432,7 +437,9 @@ while True:
 
     # Menu inicial
     print("Escolha uma opção:")
-    print("(1)\tEntrar\n(2)\tCadastrar-se\n(3)\tSair")
+    print("(1)\tEntrar\n"
+          "(2)\tCadastrar-se\n"
+          "(3)\tSair")
     escolha_menu_inicial = input()
 
     # Estrutura de decisão para decidir qual menu vai ser exibido (adm ou usuário)
@@ -449,7 +456,12 @@ while True:
             nav_menu_secundario = True
             while nav_menu_secundario:
                 print(
-                    "Escolha uma opção:\n(1)\tReciclar\n(2)\tExtrato de pontos\n(3)\tCotação Atual de materiais\n(4)\tVer informações do usuário\n(5)\tSair")
+                    "Escolha uma opção:\n"
+                    "(1)\tReciclar\n"
+                    "(2)\tExtrato de pontos\n"
+                    "(3)\tCotação Atual de materiais\n"
+                    "(4)\tVer informações do usuário\n"
+                    "(5)\tSair")
                 escolha_menu_secundario = input()
 
                 if escolha_menu_secundario == "1":

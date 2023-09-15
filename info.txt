@@ -1,0 +1,33 @@
+IBM challenge
+Sprint III - Computational Thinking with Python
+
+    > Emanuelle Soares 979773
+    > Enzo Shiotuqui 551508
+    > Murilo Roveri 97893
+    > Ricardo Hilkner 550757
+    > Victoria Franceschini 550609
+
+    O programa simula o sistema reUse, com as principais funcionalidades sendo:
+    > Definido como menu primário:
+        > Login: para usuários já cadastrados.
+        > Cadastro: de novos clientes como usuários.
+        > Sair: fechar o programa.
+    > Acesso ao menu de usuário por um PIN único de 5 números gerados aleatóriamente por sorteio. Sendo suas
+    funcionalidades:
+        > Reciclar: o usuário tem a possibilidade de escolher qual material vai descartar, depois é feito um sorteio
+        via módulo random para simular a pesagem do material depositado na lixeira. Assim que a operação é confirmada
+        a quantidade de pontos é contabilizada para o usuário, também é contabilizado os KGs reciclados por material.
+        > Extrato de pontos: a apção permite que o usuário consiga visualizar a quantidade de pontos acumulados até o
+        momento.
+        > Cotação Atual de materiais: exibe a cotação de pontos por KG de cada material.
+        > Ver informações do usuário: Exibe todas as informações do usuáro guardadas no sistema.
+        > Sair: sai do login e volta para o menu inicial.
+    > Acesso ao menu do Administrador pelo PIN fixo "66666", com as seguintes opções:
+        > Cotação de Pontos Atual: exibe a cotação de pontos por KG de cada material.
+        > Mudar Cotação de Pontos: permite que o administrador escolha o material desejado e mude a cotação de pontos.
+        A funcionalidade também exibe a cotação atual do material selecionado para facilitar a operação.
+        > Lista de Usuários: exibe a lista com todos os usuários cadastrados até o momento.
+        > Alterar Informações de Usuário: permite com que o administrador mude as informções de usuários cadastrados.
+        > Excluir Usuário: permite que o administrador exclua os usuários. (no caso o que escolher)
+        > Adicionar Usuário: permite com que o administrador faça um cadastro.
+        > Sair: sai do login e volta para o menu inicial.
