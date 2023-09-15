@@ -100,8 +100,8 @@ def cadastro():
     # Fazendo um sorteio para gerar o PIN (com 5 dígitos)
     pin_aleatorio = gerar_pin_aleatorio()
 
-    # Converta o PIN para um número inteiro
-    pin_aleatorio = int(pin_aleatorio)
+    # Converta o PIN para uma string
+    pin_aleatorio = str(pin_aleatorio)
 
     # Atualizando o dicionário de usuários com os novos dados gerados
     usuarios[pin_aleatorio] = {
@@ -446,9 +446,8 @@ while True:
         elif pin in usuarios:
             usuario = usuarios[pin]
             print(f"Bem-vindo, {usuario['nome']}! Estamos felizes em receber de volta.")
-            # Criando o menu secundário
+            # menu secundário (usuário)
             nav_menu_secundario = True
-            # Adicionando Loop no menu secundário
             while nav_menu_secundario:
                 print(
                     "Escolha uma opção:\n(1)\tReciclar\n(2)\tExtrato de pontos\n(3)\tCotação Atual de materiais\n(4)\tVer informações do usuário\n(5)\tSair")
